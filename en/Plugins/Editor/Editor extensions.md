@@ -28,5 +28,8 @@ onload() {
 ```
 
 While CM6 supports several types of extensions, two of the most common ones are [[View plugins]] and [[State fields]].
-<DocCardList items={useCurrentSidebarCategory().items}/>
 
+See also:
+
+- [[View plugins]]
+- [[State fields]]

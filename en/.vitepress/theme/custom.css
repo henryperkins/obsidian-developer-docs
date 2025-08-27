@@ -1,0 +1,42 @@
+/* Custom styles for Obsidian Developer Docs */
+
+:root {
+  --vp-c-brand: #7c3aed;
+  --vp-c-brand-light: #8b5cf6;
+  --vp-c-brand-lighter: #a78bfa;
+  --vp-c-brand-lightest: #c4b5fd;
+  --vp-c-brand-dark: #6d28d9;
+  --vp-c-brand-darker: #5b21b6;
+  --vp-c-brand-dimm: rgba(124, 58, 237, 0.08);
+}
+
+/* Override default VitePress theme colors */
+.dark {
+  --vp-c-brand: #a78bfa;
+  --vp-c-brand-light: #c4b5fd;
+  --vp-c-brand-lighter: #ddd6fe;
+  --vp-c-brand-lightest: #ede9fe;
+  --vp-c-brand-dark: #8b5cf6;
+  --vp-c-brand-darker: #7c3aed;
+}
+
+/* Custom search button in navbar */
+.VPNavBarSearch {
+  display: none; /* Hide default search to replace with AutoRAG */
+}
+
+.VPNavBar .autorag-search {
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .VPNavBar .autorag-search .search-button span:not(.search-icon) {
+    display: none;
+  }
+  
+  .VPNavBar .autorag-search kbd {
+    display: none;
+  }
+}

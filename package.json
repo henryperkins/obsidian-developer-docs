@@ -1,0 +1,29 @@
+{
+  "name": "obsidian-developer-docs",
+  "version": "1.0.0",
+  "description": "This repository contains the vault for the Obsidian Developer Docs.",
+  "homepage": "https://github.com/henryperkins/obsidian-developer-docs#readme",
+  "bugs": {
+    "url": "https://github.com/henryperkins/obsidian-developer-docs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henryperkins/obsidian-developer-docs.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev en",
+    "build": "vitepress build en",
+    "preview": "vitepress preview en",
+    "ingest": "node scripts/ingest-docs.js"
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0",
+    "vue": "^3.4.0"
+  },
+  "dependencies": {
+    "@cloudflare/workers-types": "^4.0.0"
+  }
+}

@@ -13,3 +13,9 @@ Thumbs.db
 .idea/
 .vscode/
 .vs/
+
+# Local env and build artifacts
+.env
+en/.vitepress/dist
+node_modules
+workers/autorag-api/node_modules

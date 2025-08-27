@@ -1,0 +1,36 @@
+name = "obsidian-docs-autorag-api"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# AutoRAG AI binding
+[ai]
+binding = "AI"
+
+# Browser Rendering (optional; required for /api/render-ingest)
+[browser]
+binding = "MY_BROWSER"
+
+# R2 bucket for documentation storage
+[[r2_buckets]]
+binding = "DOCS_BUCKET"
+bucket_name = "obsidian-docs"
+
+# Environment variables (replace with your actual values)
+[vars]
+AUTORAG_NAME = "obsidian-docs"
+# ACCOUNT_ID = "your-account-id"
+# API_TOKEN = "your-api-token"
+# INGESTION_TOKEN = "your-ingestion-token"
+# ALLOWED_ORIGINS = "*" # set to your docs domain in production, e.g. https://docs.example.com
+# ALLOWED_RENDER_HOSTS = "developers.cloudflare.com,example.com" # optional allowlist for render-ingest
+
+# Routes for the worker
+routes = [
+  { pattern = "docs-api.example.com/*", zone_name = "example.com" }
+]
+
+# Development settings
+[dev]
+port = 8787
+local_protocol = "http"

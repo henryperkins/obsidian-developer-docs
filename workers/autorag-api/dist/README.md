@@ -1,0 +1,1 @@
+This folder contains the built output assets for the worker "obsidian-docs-autorag-api" generated at 2025-08-27T20:51:42.547Z.
