@@ -1,0 +1,21 @@
+{
+  "name": "obsidian-docs-worker",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "copy-assets": "cp -r ../en/.vitepress/dist/* ./public/"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.0.0",
+    "typescript": "^5.0.0",
+    "wrangler": "^3.91.0"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^1.0.14",
+    "ai": "^4.0.35"
+  }
+}

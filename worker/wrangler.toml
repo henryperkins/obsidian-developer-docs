@@ -1,0 +1,42 @@
+name = "obsidian-docs-autorag"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Serve built VitePress files
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+
+# AutoRAG Workers binding
+[ai]
+binding = "AI"
+
+# Durable Object for MCP (JSON-RPC handler)
+[[durable_objects.bindings]]
+name = "MCP_OBJECT"
+class_name = "NLWebMcp"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["NLWebMcp"]
+
+# R2 bucket for documentation storage (optional, for ingestion)
+[[r2_buckets]]
+binding = "DOCS_BUCKET"
+bucket_name = "obsidian-docs"
+
+# Environment variables
+[vars]
+RAG_ID = "obsidian-docs"
+STREAM_DEFAULT = "false"
+DEFAULT_TOPK = "6"
+DEFAULT_THRESHOLD = "0.30"
+USE_EXTERNAL_LLM = ""
+ALLOWED_ORIGINS = "*"
+
+# Development settings
+[dev]
+port = 8787
+local_protocol = "http"
